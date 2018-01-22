@@ -1,5 +1,6 @@
 # strncpy와 strncpy_s에 대한 오해 및 snprintf_s _TRUNCATE 버그
 * 2008-04-01. magicpotato.
+* 2018-01-22 update.
 
 # strncpy()
 
