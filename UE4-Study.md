@@ -25,7 +25,7 @@
 3. Details: 선택된 액터
 4. Content Browser: 개발자 에셋
 5. Modes: 엔진 에셋 등 **Mode라는 용어를 쓴 이유를 알아야 한다**
-
+6. Layers: 액터 레이어 관리
 
 # Unreal4 Folder Structure
 
@@ -69,6 +69,13 @@
 # 단위
 1. 1 UnrealUnit => 1cm
 2. 중력가속도 0.98 => 980
+
+
+# World Outliner 주요개념
+1. Folder: 단순 정리용
+2. Group: 일괄 TRS 에디트용
+3. Layer: ~~카메라 필터링등에 이용~~ (TODO: 좀 더 확인)
+4. Attach: 계층구조 구성
 
 
 # 코드 실행순서
