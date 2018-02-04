@@ -141,3 +141,10 @@
 2. 에디터 설정값 세팅
 3. 클래스 BeginPlay()
 
+
+# 고민거리
+1. Collision Hull의 두가지 용법
+   1. Static Mesh별로 놓는 방법 - 설치물, 건축물에 유리할 듯
+   2. Mesh와 Collision Hull을 구분하는 방법 - 자연물등에 유리할 듯
+      * Blocking Volume을 외곽에 설치
+
