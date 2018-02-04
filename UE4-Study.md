@@ -76,10 +76,67 @@
 2. Group: 일괄 TRS 에디트용
 3. Layer: ~~카메라 필터링등에 이용~~ (TODO: 좀 더 확인)
 4. Attach: 계층구조 구성
+* 오브젝트 배치는 Modes패널이 Place(Shift+1) 상태여야 한다. (폴리지 상태로 불가능)
+
+
+# 조명 세팅
+1. Sky Sphere / Sky light(Ambient light) / Atmospheric fog
+   1. Sky Sphere.Directional light Actor에 Directional Light 설정가능
+2. 라이트 종류
+   1. Static: 라이트맵으로 이용
+   2. Stationary: 이동불가, 밝기/색/OnOff 제어가능
+   3. Movable: 동적 라이트, 간접광 불가
+3. Swarm Agent: 라이트 빌더
+4. Lightmass Importance Volume
+   1. 반사광 처리를 고려할 영역을 지정할 때 사용 (라이트 빌드 시간 최적화)
+
+
+# Material / Editor
+1. 언리얼은 매터리얼 단위를 기본으로 사용 (텍스쳐는 기본단위 아님)
+2. Material을 상속받아 Material Instance를 사용할 수 있다.
+3. Material
+   1. 매터리얼에서 TextureSample(T)를 BaseColor로 끌어다 쓰는 방식
+   2. 에디터에서 특정 노드 우클릭 후 **Convert to Parameter**로 속성 노출
+   3. Parameter는 Material Instance 더블 클릭 후 에디터에서 수정
+   4. MeshActor에 지정된 Material의 Parameter는 Details창에 노출되지 않는다.
+   5. 즉, 베리에이션 수 만큼의 Material Instance를 만들어야 한다.
+
+
+# Static Mesh Asset / Editor
+1. FBX, OBJ 드래그&드랍 또는 우클릭 Import To로 해당 에셋 추가
+2. 더블클릭으로 Static Mesh Editor 열기
+3. Static Mesh Editor
+   * 매터리얼, LOD, 콜리전 헐/충돌방식, 소켓 등 설정
+
+
+# Audio Asset
+1. 사운드 파일 드래그&드랍 또는 우클릭 Import To로 해당 에셋 추가
+2. (씬에 배치된)Ambient Sound Actor에 Sound Wave Asset을 지정해서 사용하는 방식
+
+
+# Landscape & Foliage
+1. Landscape: 심시티 지형 편집기 개념 (Shift+3)
+   1. 사용시 Landscape, LandscapeGizmoActiveActor가 하나씩 배치된다.
+   2. 전용 매터리얼을 만들면 Landscape.Paint.TargetLayers에서 사용가능
+      1. Landscape Layer Blend 노드를 갖는 매터리얼을 생성
+         1. Layers를 구성하고 노드를 입력한다.
+         2. 레이어 핵심파라미터: Layer Name, BlentType
+2. Foliage: Static Mesh Asset 분무기 개념 (풀심기 툴) (Shift+4)
+   1. Foliage 팔레트에 StaticMesh들을 등록한 다음 지형 위에 흩뿌린다.
+
+
+# Blueprint Class (따라해보기)
+1. 레벨에 StaticMesh, PointLight, SoundCue 를 하나씩 배치한다.
+2. 모두 선택 후 메인 툴바에서 Blueprint → **Convert selected Components to Blueprint Class** 선택
+3. BP 에디터에서 각 컴포넌트의 기본값을 세팅한다.
+4. 메인 에디터 File → Save All
+5. BPC 여러개 배치
+   1. 배치된 BPC Instance의 Details를 확인
+   2. Root, Component 개념 확인
+   
 
 
 # 코드 실행순서
-
 1. 클래스 생성자
 2. 에디터 설정값 세팅
 3. 클래스 BeginPlay()
