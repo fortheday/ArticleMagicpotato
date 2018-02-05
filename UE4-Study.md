@@ -17,6 +17,7 @@
 
 1. 에셋: Content Browser에 등록된 것들 (배치안됨)
 2. 액터: Map에 배치된 것들
+3. SubUV: 고전 스프라이트 텍스쳐 (NxN으로 잘라서 사용하는 용도 - 2D, 이펙트)
 
 
 # Editor 구성
@@ -26,6 +27,7 @@
 4. Content Browser: 개발자 에셋
 5. Modes: 엔진 에셋 등 **Mode라는 용어를 쓴 이유를 알아야 한다**
 6. Layers: 액터 레이어 관리
+
 
 # Unreal4 Folder Structure
 
@@ -133,7 +135,39 @@
 5. BPC 여러개 배치
    1. 배치된 BPC Instance의 Details를 확인
    2. Root, Component 개념 확인
-   
+
+
+# 캐릭터/애니메이션 (1)
+> UE4에서 기본 제공하는 Owen 캐릭터를 Reference Viewer로 확인해 보자.
+1. 필수 구성요소
+   1. Skeletal Mesh: 본, 메시, 가중치등을 가짐. Skeleton에 의해 제어됨 (fbx)
+   2. Skeleton: Skeletal Mesh에 적용되는 뼈대. Animation Sequence에 의해 제어됨 (fbx)
+   3. Animation Sequence: Skeleton에 대한 애니메이션 정보 (키 프레임 위치, 회전, 스케일) (fbx)
+2. 추가 구성요소
+   1. Physics asset: Skeleton과 연동, Ragdoll로 작동하게 하거나 ray처리 가능(?)
+   2. Animation Blueprint
+3. 페르소나 에디터
+   > 연관에셋 중 아무거나 더블클릭 해서 열고 전환 가능.
+   1. 스켈레톤: 스켈레톤 계층 구조를 확인, 관절 테스트, 소켓 추가 등
+   2. 메시: LOD 설정, 물리/천 설정, 매터리얼 설정 등
+   3. 애니메이션: 애니메이션 설정, 소켓/노티파이 설정, 각 시퀀스 편집 등
+      1. 그래프편집: 애니메이션 블루프린트 편집 (애니메이션간 블렌드, 이벤트 등 제어)
+   4. 물리: 물리 설정
+
+
+# 애니메이션 창 (2)
+1. 편집 뷰
+   1. Notifies: 노티파이
+   2. Curves:
+   3. Tracks: 하나의 본마다 TRS를 갖는다. (Transform,Rotate,Scale)
+   4. Timeline: 화면 맨 아래 좁은 영역이 타임라인이다. 우클릭 메뉴 가능.
+2. 키 추가 방법
+   > 키 추가 팁: 0프레임, 마지막 프레임에서 +Key 버튼을 2번씩 누르면 초기값 키가 생성된다.
+   1. Timeline에서 프레임을 선택
+   2. Skeleton Tree에서 건드릴 본을 선택
+   3. 툴바의 +Key 버튼 (단축키 s)
+   4. 뷰포트에서 수정
+   5. 툴바 Apply 버튼
 
 
 # 코드 실행순서
