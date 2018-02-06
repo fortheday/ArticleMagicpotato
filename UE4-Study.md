@@ -1,6 +1,7 @@
 # Unreal Engine 4 Study note
 * 2018-01-29. magicpotato.
 
+# [강의는 여기가 짱](http://cafe.naver.com/unrealenginekr/735)
 
 # 학습방향/컨셉
 > 기술지원이 가능한 언리얼 프로그래머 (그래픽디자이너, 기획자를 위함)
@@ -170,6 +171,18 @@
    5. 툴바 Apply 버튼
 
 
+# 블루프린트 Hello World
+1. 메인툴바 → Blueprints → Open Level Blueprint
+2. `Event Tick` 노드의 exec ▷를 드래그, 빈 공간에 드랍
+3. `Print String`을 찾아서 선택 (Search창에 `print string` 입력)
+4. `Print String`의 `In String`값을 `Hello world` 로 변경
+5. `Play` 클릭 후 뷰포트 확인
+
+
+# 블루프린트 편집
+1. Alt-클릭: 와이어 삭제
+
+
 # 코드 실행순서
 1. 클래스 생성자
 2. 에디터 설정값 세팅
@@ -181,4 +194,3 @@
    1. Static Mesh별로 놓는 방법 - 설치물, 건축물에 유리할 듯
    2. Mesh와 Collision Hull을 구분하는 방법 - 자연물등에 유리할 듯
       * Blocking Volume을 외곽에 설치
-
