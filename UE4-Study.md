@@ -1,7 +1,7 @@
 # Unreal Engine 4 Study note
 * 2018-01-29. magicpotato.
 
-# 공부방법 (매우 중요)
+# 공부방법
 > 언리얼 엔진을 공부하는 방법에 대한 가이드라인
 
 1. 완전히 새로 배운다고 생각해야 한다. 용어도 의심없이 받아들여야 한다.
@@ -32,7 +32,7 @@
    1. 언리얼 에디터의 전반적 기능을 다루는 가장 **얇은** 책 한권을 '지도'로 삼는다.
       > 추천하는 책을 봤는데도 설명이 난해하다. 단지 '목차'용도로만 쓰고 아래 자료로 공부.
    2. [네이버카페-입문강의](http://cafe.naver.com/unrealenginekr/735)
-      > UMG강의는 흐름이 복잡한편. 그때그때 따라하든가, 연관관계를 그리면서 공부하길 권장
+      > UMG강의는 흐름이 복잡한편. 그때그때 따라하든가, 연관관계를 그리면서 공부하길 권장. 조급하다고 배속을 올리면 자막만 보느라 화면내용을 놓칠 수 있다. 마우스커서와 맥락을 집중하면서 볼 것.
    3. [언리얼서밋-중급강의](http://replay.unrealsummit.co.kr/)
    4. [언리얼공식 문서](https://docs.unrealengine.com/latest/KOR/)
 
@@ -151,6 +151,10 @@
    1. Foliage 팔레트에 StaticMesh들을 등록한 다음 지형 위에 흩뿌린다.
 
 
+# [Cinematics with Sequencer](https://www.youtube.com/watch?v=uEnfMV-4afA&index=1&list=PLZlv_N0_O1gaiA_sfpjATUprVW7B9FcK1)
+> 시네마틱 도중에 블루프린트로 제어하는 등의 내용은 없다.
+
+
 # Blueprint Class (따라해보기)
 1. 레벨에 StaticMesh, PointLight, SoundCue 를 하나씩 배치한다.
 2. 모두 선택 후 메인 툴바에서 Blueprint → **Convert selected Components to Blueprint Class** 선택
@@ -173,6 +177,8 @@
 3. 페르소나 에디터
    > 연관에셋 중 아무거나 더블클릭 해서 열고 전환 가능.
    1. 스켈레톤: 스켈레톤 계층 구조를 확인, 관절 테스트, 소켓 추가 등
+      1. [스켈레톤 에셋 강좌](https://www.youtube.com/watch?v=FDbpHamn2eY&list=PLZlv_N0_O1gbwdyIm78w42fZ1t8dDClsI&index=1)
+         1. 임포트, 에셋 설명, 리타게팅, 소켓(무기슬롯), 애니노티(이벤트→블루프린트), 애니커브(AniState에서 커브값 받아서 블루프린트 사용)
    2. 메시: LOD 설정, 물리/천 설정, 매터리얼 설정 등
    3. 애니메이션: 애니메이션 설정, 소켓/노티파이 설정, 각 시퀀스 편집 등
       1. 그래프편집: 애니메이션 블루프린트 편집 (애니메이션간 블렌드, 이벤트 등 제어)
@@ -192,6 +198,36 @@
    3. 툴바의 +Key 버튼 (단축키 s)
    4. 뷰포트에서 수정
    5. 툴바 Apply 버튼
+
+
+
+
+# [파티클](https://www.youtube.com/watch?v=OXK2Xbd7D9w&index=1&list=PLZlv_N0_O1gYDLyB3LVfjYIcbBe8NqR8t)
+1. 메인용어
+   1. 파티클시스템: 이미터의 집합. 파티클을 표현
+   2. 이미터: 모듈의 집합. 입자타입별 생성-처리-소멸을 관장 / 왼쪽에서 오른쪽으로 실행
+   3. 모듈: 입자 타입의 각 처리단계를 관장 (생성, 색상변화, 크기변화 등). Required/Spawn은 필수모듈 / 위에서 아래로 실행
+      1. 타입데이터모듈: 이미터당 1개만(검은바에 위치) 가능. 어느 종류의 파티클을 만들지 통제.
+      2. Distribution: 분포. 추상적 의미로 사용되었으므로 '모듈기능 처리시, 시간에 따른 (용도별)값' 세팅으로 보자.
+2. 서브용어
+   1. Cascade: 파티클 시스템 에디터
+   2. 이미터 액터: 파티클시스템을 갖는 액터
+   3. 파티클시스템 컴포넌트: 블루프린트(클래스?)의 구성요소로 사용하는 파티클시스템(의 랩퍼?)
+
+
+# 네트워크
+1. 용어
+   1. 리플리케이션: 액터 동기화, 변수 동기화, RPC호출등을 뜻함
+   2. Authority: 수정권한 같은 개념. 내 캐릭터의 변수 수정권한은 서버가 갖는다. HUD/UI 수정 권한은 내가 갖는다.
+2. 참고
+   > 대충 훑어보면 MMO를 만들 때 언리얼 서버를 쓰지는 않는 것 같다. '룸'당 하나의 서버가 떠야 하는 개념. '연관성'이라는 개념이 있는데 MMO에서 사용 가능한 수준인지 살펴보자.
+   1. [mmo capabilities of UE4?](https://forums.unrealengine.com/community/general-discussion/41479-mmo-capabilities-of-ue4)
+   2. [데디케이트 서버 관련 이야기1](http://lab.gamecodi.com/board/zboard.php?id=GAMECODILAB_QnA_etc&no=5084)
+   3. [데이케이트 서버 관련 이야기2](http://www.gamecodi.com/board/zboard.php?id=GAMECODI_Talkdev&no=3135)
+3. 주의사항
+   1. 블루프린트에서 노드아이콘을 염두해야 한다. (서버모양은 서버에서만 실행, 모니터+번개는 서버에서 실행 아예 안함)
+   2. ReplicationNotify는 블루프린트에서만 작동한다. C++코딩시 직접 노티를 날려줘야 함.
+
 
 
 # 블루프린트 Hello World
@@ -215,6 +251,10 @@
 1. 클래스 생성자
 2. 에디터 설정값 세팅
 3. 클래스 BeginPlay()
+
+
+# [프로그래밍 개요](https://www.youtube.com/watch?v=vtcWrcscXos&feature=youtu.be&list=PLZlv_N0_O1gaCL2XjKluO7N2Pmmw9pvhE)
+  1. TODO
 
 
 # 컴포넌트 개념 (미완성)
