@@ -253,7 +253,7 @@
 3. 클래스 BeginPlay()
 
 
-# [프로그래밍 개요](https://www.youtube.com/watch?v=vtcWrcscXos&feature=youtu.be&list=PLZlv_N0_O1gaCL2XjKluO7N2Pmmw9pvhE)
+# [프로그래밍 개요](https://www.youtube.com/watch?v=vtcWrcscXos&index=1&list=PLZlv_N0_O1gb5xvsc7VM7pfoRAKLuIcFi)
   1. TODO
 
 
