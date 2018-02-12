@@ -32,8 +32,17 @@
    1. 언리얼 에디터의 전반적 기능을 다루는 가장 **얇은** 책 한권을 '지도'로 삼는다.
       > 추천하는 책을 봤는데도 설명이 난해하다. 단지 '목차'용도로만 쓰고 아래 자료로 공부.
    2. [네이버카페-입문강의](http://cafe.naver.com/unrealenginekr/735)
-      > UMG강의는 흐름이 복잡한편. 그때그때 따라하든가, 연관관계를 그리면서 공부하길 권장. 조급하다고 배속을 올리면 자막만 보느라 화면내용을 놓칠 수 있다. 마우스커서와 맥락을 집중하면서 볼 것.
+      > UMG강의는 흐름이 복잡한편. 그때그때 따라하든가, 연관관계를 그리면서 공부하길 권장. 조급하다고 배속을 올리면 자막만 보느라 화면내용을 놓칠 수 있다. 마우스커서와 맥락을 집중하면서 볼 것. 모든 영상을 볼 필요는 없다. 어떠 강의는 논점이 흐트러지면서 중구난방으로 설명해서 따라가기 어렵다.
    3. [언리얼서밋-중급강의](http://replay.unrealsummit.co.kr/)
+      1. [엔진 개념 등](http://replay.unrealsummit.co.kr/data/summit2017/unrealsummit018.pdf)
+      1. [언리얼엔진4 시작하기](http://replay.unrealsummit.co.kr/data/ue_start.pdf)
+      1. 레퍼런스만 알면 언리얼 엔진이 제대로 보인다
+         [영상](http://replay.unrealsummit.co.kr/v1.html) 
+         [PDF](http://replay.unrealsummit.co.kr/data2017/session01.pdf)
+      1. [언리얼이 쉬워지는 6가지 핵심 개념](http://replay.unrealsummit.co.kr/data/summit2016/2016_02.pdf)
+      2. [언리얼 튜토리얼만 쌓여가는 유니티 개발자를 위한 조언](http://replay.unrealsummit.co.kr/data/summit2017/unrealsummit018.pdf)
+      3. [모바일 개발 설정과 패키징](http://replay.unrealsummit.co.kr/data/summit2015/2015_02.pdf)
+
    4. [언리얼공식 문서](https://docs.unrealengine.com/latest/KOR/)
 
 
@@ -187,7 +196,8 @@
 
 # 애니메이션 창 (2)
 1. 편집 뷰
-   1. Notifies: 노티파이
+   1. Notifies: [노티파이](https://www.youtube.com/watch?v=per6KmuvRlQ&index=5&list=PLZlv_N0_O1gbwdyIm78w42fZ1t8dDClsI)
+                [다른거](https://www.unrealengine.com/ko/blog/crash-course-in-animation-notifies)
    2. Curves:
    3. Tracks: 하나의 본마다 TRS를 갖는다. (Transform,Rotate,Scale)
    4. Timeline: 화면 맨 아래 좁은 영역이 타임라인이다. 우클릭 메뉴 가능.
@@ -198,8 +208,6 @@
    3. 툴바의 +Key 버튼 (단축키 s)
    4. 뷰포트에서 수정
    5. 툴바 Apply 버튼
-
-
 
 
 # [파티클](https://www.youtube.com/watch?v=OXK2Xbd7D9w&index=1&list=PLZlv_N0_O1gYDLyB3LVfjYIcbBe8NqR8t)
@@ -253,10 +261,6 @@
 3. 클래스 BeginPlay()
 
 
-# [프로그래밍 개요](https://www.youtube.com/watch?v=vtcWrcscXos&index=1&list=PLZlv_N0_O1gb5xvsc7VM7pfoRAKLuIcFi)
-  1. TODO
-
-
 # 컴포넌트 개념 (미완성)
 ```
 Modes.Place-Basic.EmptyActor를 하나 배치한 뒤, Details창을 2개로 연다.
@@ -276,8 +280,48 @@ Fog처럼 씬글로벌 개념인 애들은 컴포넌트 추가가 아예 안된�
 
 # 개인메모
   1. 한번 더 깊게 공부: 파티클, 액터애니메이션, 시네마틱, 사운드에셋구조, UMG편집 별도공부
+                        BehaviourTree, StreamingMap/서브레벨, 빌드자동화
   2. 물리용어
      - damping 감쇠(회복력)
      - friction 마찰력
      - restitution 탄성(회복력)
      - impulse 충격량
+
+
+# 개인메모2 (횡스크롤 액션 하려다 만 것 기록)
+```
+1. 3인칭 프로젝트의 마네킹을 가져옴.
+2. 마네킹BP의 SprintArm 컴포넌트 Pitch조정이 안되서 CemraSettings.InheritPitch 해제
+3. ProjectSetting.DefaultModes = GameMode_SideFight(↑GameModeBase)
+   DefaultPawnClass = MannequinBP
+4. 맵의 진행방향을 X축으로 돌려서 제작 (PlayerStart.Yaw = 90 안함)
+
+5. ProjectSetting.Engine-Input.AxisMapping에 SideFightForward 추가 (A:-1, D:+1)
+6. 마네킹BP에 InputAxis-SideFightForward를 AddMovementInput.Scale에 연결 (Dir:1,0,0) 이동됨.
+
+7. 씬상의 카메라를 뷰타겟으로 하는것에서 Reference얻는걸 버벅임.
+   7.1. 아웃라이너에서 선택한 상태에서 블루프린트에서 우클릭하면 됨.
+   7.2. 레벨BP에서 추가해야 한다. 마네킹BP에서는 추가 불가능.
+
+8. 애니메이션 '이벤트'라는 용어가 아니다. 'Notify'이다. (한참 헤멤)
+9. 애니노티는 각 애니 시퀀스에서 발생시킨다.
+10. 액터에서 애니노티를 받으려면 AnimBP에서 한 번 포워딩 해 줘야 한다.
+11. 마네킹BP.ClassSettings.Interface에 BluePrintInterface(BPI) 추가 가능.
+12. 인터페이스 구현은 빨간색 노드. BPI는 우클릭.AddEvent 밑에 있다.
+13. 호출은 2가지. Message는 조용히 실패. Function Call은 실패시 에러.
+14. AnimNotify을 상속받아서 애니메이션의 세부 값을 받아올 수 있다.
+15. AnimNotify도 Interface를 통해서 Actor로 접근해야 한다.
+
+16. 단순히 PlayAnimation을 실행하면 애니메이션 관리가 깨져서 멈춰버린다.
+17. AnimBP.AnimGraph 및 Functions/Variables를 이해해야 한다.
+18. CharacterComponent에서는 Velocity,IsFalling을 업데이트하고 Transform업데이트만 한다.
+19. AnimBP에서 Velocity/IsFalling을 가져와서 애니메이션 FSM에 적용한다.
+20. 애니FSM에 Idle-Walk-Run → JumpStart~Loop~End의 세팅이 되어있다. (메카님처럼)
+21. 따라서 시퀀스를 껴넣고 싶으면 FSM을 업데이트 해야한다.
+22. 또한 CharacterBP에 신규 시퀀스와 연결될 파라미터를 업데이트해줘야 한다.
+23. 또한 AnimBP에서 파라미터를 가져다가 사용하도록 작성할 수 있다.
+24. 방식1) CharBP에서 AnimBP의 파라미터를 건드리는 방식
+25. 방식2) AnimBP에서 CharBP의 파라미터를 가져오는 방식
+
+26. 감을 잡았으므로 여기서 일시중단.
+```
