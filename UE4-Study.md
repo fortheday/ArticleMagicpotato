@@ -53,6 +53,7 @@
 2. 액터: Map에 배치된 것들
 3. PBR: 표면을 물리적으로 정의한 체계로 매터리얼을 구성하는 것
 4. SubUV: 고전 스프라이트 텍스쳐 (NxN으로 잘라서 사용하는 용도 - 2D, 이펙트)
+5. 라이트매스: 정적 라이팅 시스템 (라이트맵 빌더?)
 
 # Editor 구성
 1. Viewport: 씬 에디터
@@ -325,3 +326,21 @@ Fog처럼 씬글로벌 개념인 애들은 컴포넌트 추가가 아예 안된�
 
 26. 감을 잡았으므로 여기서 잠정중단.
 ```
+
+# 개인메모3 (UnrealCodingEnv)
+```
+1. Contents 폴더에서 C++Class를 추가해도 C++Classes(PRJ/Source/Module/Public&Private)로 간다.
+2. 언리얼 에디터에서 MyActor를 만들면 엄청 오래걸린다.
+3. 언리얼 에디터에서 MyActor 지우는법을 모르겠다.
+4. MyActor를 직접 지운 후 VC++에서 재빌드 해야 에디터에서 사라진다.
+   (UnrealCodingEnv/Intermediate/Build/Win64/UE4Editor/Development/UnrealCodingEnv?)
+5. gen경로: UnrealCodingEnv/Intermediate/Build/Win64/UE4Editor/Inc/UnrealCodingEnv
+```
+
+# C++ Version (조사중)
+1. XCode 6.3, Clang (Apple LLVM Compiler Version 6.1)에서 C++14 완벽지원.
+2. XCode 9 에서 C++17이 어느정도 지원되는지 모르겠다. [링크](https://forums.developer.apple.com/thread/79555)
+3. NDK r16은 C++14까지 완벽지원 하는듯. C++17작업중이라고 함.
+   [링크1](https://android-developers.googleblog.com/2017/11/update-on-kotlin-for-android.html)
+   [링크2](https://www.phoronix.com/scan.php?page=news_item&px=Android-NDK-r16)
+   
