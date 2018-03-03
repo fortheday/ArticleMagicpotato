@@ -78,7 +78,7 @@
 | Saved        | 자동저장 | 삭제 |
 
 
-# Gameplay Framework (GameMode) [UE Link](https://docs.unrealengine.com/latest/INT/Gameplay/Framework/index.html)
+# Gameplay Framework 개요 (GameMode) [UE Link](https://docs.unrealengine.com/latest/INT/Gameplay/Framework/index.html)
 
 > 유니티를 쓸 때 매니저급 싱글톤들을 만들어야 한다. Hierarchy에 싱글톤을 배치하지 않아도 Play를 누르면 편의상 자동 생성하는 것 처럼 언리얼에는 이런것들이 XXXBase의 이름으로 이미 존재한다. 유니티에서 직접 만들어야 하는것을 언리얼에서는 **분석**하고 상속받아서 쓰는 것 같다.
 
@@ -344,3 +344,8 @@ Fog처럼 씬글로벌 개념인 애들은 컴포넌트 추가가 아예 안된�
    [링크1](https://android-developers.googleblog.com/2017/11/update-on-kotlin-for-android.html)
    [링크2](https://www.phoronix.com/scan.php?page=news_item&px=Android-NDK-r16)
    
+
+# Gameplay Framework 관련 메모 [UE Link](https://docs.unrealengine.com/latest/INT/Gameplay/Framework/index.html)
+1. 
+
+# 언리얼 자체 라이브러리 (TArray 등) 관련 메모
