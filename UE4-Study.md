@@ -7,6 +7,8 @@
 1. ~완전히 새로 배운다고 생각해야 한다. 용어도 의심없이 받아들여야 한다.~
    언리얼이 처음인 경우 다양한 형태의 강좌를 여러개 볼 수 밖에 없다. 공홈 문서만 보라는 사람들은 언리얼3 이전부터 엔진을 써 본 사람이 많은 것 같다. 1달가량 언리얼을 공부하는 도중 느낀 점은 언리얼 엔진은 존카막같은 테크니컬 엔지니어가 만든 레거시를 끌고 가는 느낌이 강하다. (앤더슨 헤일스버그같은 사람이 .NET, C#을 설계한 것과는 반대편에 있는 느낌) 기술, 성능 같은것은 훌륭하겠지만, 소프트웨어 구조나 모듈 레벨에서 볼 때 정돈된 엔진이 아니다. 좋은 예시로 TMap.FindRef()함수가 적절한데, 이 것은 GetValueByKey()같은 이름을 가져야 한다.
 
+1. [Unreal Engine 4 Documentation](https://docs.unrealengine.com/latest/KOR/) 만으로는 학습하기 어렵다. [커뮤니티-블로그(프로그래밍)](https://www.unrealengine.com/ko/blog/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)에서 읽어야만 하는 내용이 따로 있다. 아마도 엔진이 업데이트 될 때마다 UE4Doc이 갱신된다기 보다는 블로그나 릴리즈노트에 신기능을 어떻게 사용하는지 안내하는 형식으로 문서화가 이루어지는 것 같다.
+
 1. 문서가 이해되지 않으면 문서가 불친절하게 작성되었을 가능성이 높다. 반드시 직접 테스트하거나 코딩해 봐야 한다.
 
 1. 훑어보고 → 해보고(까먹고) → 한번 더 보는 정도로 학습하는게 효율적이다.
@@ -48,6 +50,7 @@
       1. [UMG 사용가이드](http://replay.unrealsummit.co.kr/data/summit2015/2015_10.pdf)
    4. [언리얼공식 문서](https://docs.unrealengine.com/latest/KOR/)
       1. 공홈에 필요한 내용은 다 있지만, 문서가 정돈되어 있지 않고 원작자가 원작자를 위한 문서화를 한 것 같은 정도의 수준이다. 이해가 안 될 경우 독자의 잘못이 아닐 가능성이 높다. 코딩을 직접 해보고 시간이 좀 흘러야 "아 이게 이걸 말하는 거였구나" 같은 수준의 문서들이 있다는 것을 알고 봐야한다.
+   5. [언리얼블로그-프로그래밍](https://www.unrealengine.com/ko/blog/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
 
 
 # 최소 용어
@@ -356,6 +359,7 @@ Fog처럼 씬글로벌 개념인 애들은 컴포넌트 추가가 아예 안된�
    
 
 # Gameplay Framework 관련 메모 [UE Link](https://docs.unrealengine.com/latest/INT/Gameplay/Framework/index.html)
-1. 
+1. TODO
 
 # 언리얼 자체 라이브러리 (TArray 등) 관련 메모
+1. TODO
