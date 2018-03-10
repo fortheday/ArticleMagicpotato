@@ -3,7 +3,7 @@
 
 > ANTLR(무식), 회사업무때문에 공부하는 중이므로 한정적, 구체적 개념으로 공부내용을 정리. 이 이상은 나도 모름 ㅜ
 
-![](http://dalkescientific.com/writings/diary/antlr_gui_mw.png)
+![](http://dalkescientific.com/writings/diary/antlr_gui_species.png)
 
 ## Antlr 소개 (ANother Tool for Language Recognition) [ANTLR](http://www.antlr.org/)
    1. 파서 제네레이터
