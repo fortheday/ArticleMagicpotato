@@ -3,6 +3,8 @@
 
 > ANTLR(무식), 회사업무때문에 공부하는 중이므로 한정적, 구체적 개념으로 공부내용을 정리. 이 이상은 나도 모름 ㅜ
 
+![](http://dalkescientific.com/writings/diary/antlr_gui_mw.png)
+
 ## Antlr 소개 (ANother Tool for Language Recognition) [ANTLR](http://www.antlr.org/)
    1. 파서 제네레이터
    1. 구조화된 텍스트/바이너리를 읽고, 처리하고, 실행하거나 번역(컴파일)하는데 사용
@@ -13,6 +15,7 @@
    1. 오픈소스, Java로 만듦
    1. ANTLR로 입력: .g (문법파일)
    1. ANTLR의 출력: .java (토크나이저 + 파스트리 출력기?)
+   1. 프로그래밍 언어에 한정되는 툴이 아니다.
 
 > ANTLR (ANother Tool for Language Recognition) is a powerful parser generator for reading, processing, executing, or translating structured text or binary files. It's widely **used** to build languages, tools, and frameworks. From a grammar, **ANTLR generates a parser** that can build and walk **parse trees**.
 
