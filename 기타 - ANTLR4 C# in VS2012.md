@@ -5,6 +5,7 @@
 # MyConcern
 1. Install JRE **32bit** version
 1. Install ANTLR Language support extension for VS [here](https://marketplace.visualstudio.com/items?itemName=SamHarwell.ANTLRLanguageSupport)
+1. [Getting started with ANTLR in C#](https://tomassetti.me/getting-started-with-antlr-in-csharp/)
 
 
 This is a (revised) attempt at a full summary of the steps needed to get ANTLR4 to generate a C# lexer, parser, and listener for a very simple grammar. The C# target is designed to work as a Visual Studio (VS) add-in only and cannot be used from the command line.
