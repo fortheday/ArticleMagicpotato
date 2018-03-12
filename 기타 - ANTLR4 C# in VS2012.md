@@ -1,6 +1,10 @@
 # [Setting Up ANTLR4 C# Target in Visual Studio 2012](https://groups.google.com/forum/#!topic/antlr-discussion/Gh_P6IiDrKU)
 
-> VisualStudio, C# 환경에서 antlr을 빌드할 때 `Unknown build error: Could not locate a Java installation.` 같은 에러를 접하게 된다. (자바가 있는데도) 그와 관련된 도움이 되는 글이다.
+> 윈도우 VisualStudio에서 ANTLR4 C#을 이용하는 가장 기초적인 방법에 대한 글이다. 또한 VisualStudio, C# 환경에서 antlr을 빌드할 때 `Unknown build error: Could not locate a Java installation.` 같은 에러를 접하게 된다. (자바가 있는데도) 그와 관련된 도움이 되는 글이다.
+
+# MyConcern
+1. Install JRE **32bit** version
+1. Install ANTLR Language support extension for VS [here](https://marketplace.visualstudio.com/items?itemName=SamHarwell.ANTLRLanguageSupport)
 
 
 This is a (revised) attempt at a full summary of the steps needed to get ANTLR4 to generate a C# lexer, parser, and listener for a very simple grammar. The C# target is designed to work as a Visual Studio (VS) add-in only and cannot be used from the command line.
