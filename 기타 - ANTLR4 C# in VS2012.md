@@ -5,6 +5,7 @@
 # MyConcern
 1. Install JRE **32bit** version
 1. Install ANTLR Language support extension for VS [here](https://marketplace.visualstudio.com/items?itemName=SamHarwell.ANTLRLanguageSupport)
+1. [Getting Started with ANTLR v4](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md)
 1. [Getting started with ANTLR in C#](https://tomassetti.me/getting-started-with-antlr-in-csharp/)
 
 
