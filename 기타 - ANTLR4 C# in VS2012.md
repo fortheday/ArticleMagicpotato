@@ -2,7 +2,7 @@
 
 > 윈도우 VisualStudio에서 ANTLR4 C#을 이용하는 가장 기초적인 방법에 대한 글이다. 또한 VisualStudio, C# 환경에서 antlr을 빌드할 때 `Unknown build error: Could not locate a Java installation.` 같은 에러를 접하게 된다. (자바가 있는데도) 그와 관련된 도움이 되는 글이다.
 
-# MyConcern
+## MyConcern
 1. Install JRE **32bit** version
 1. Install ANTLR Language support extension for VS [here](https://marketplace.visualstudio.com/items?itemName=SamHarwell.ANTLRLanguageSupport)
 1. [Getting Started with ANTLR v4](https://github.com/antlr/antlr4/blob/master/doc/getting-started.md)
@@ -13,7 +13,8 @@ This is a (revised) attempt at a full summary of the steps needed to get ANTLR4 
 
 Terence Parr is the author of ANTLR and Sam Harwell is the author of the C# language target for ANTLR. Any errors in this document are mine alone.
 
-STEP 1
+
+# STEP 1
 
 Goal: A working Java RE installation and creation of the registry entries the ANTLR4 C# target uses to locate the java.exe executable.
 
@@ -27,7 +28,8 @@ The ANTLR4 C# target, needs the java runtime, and will not run without this regi
 
 Note: Sam says that you should be able to install the 32-bit JDK on a 64-bit system and, so long as you tell the installer to install the JRE as well, the ANTLR4 C# Target will find the java runtime.
 
-STEP 2
+
+# STEP 2
 
 Goal: ANTLR Language Support extension installed in VS.
 
@@ -35,7 +37,8 @@ Goal: ANTLR Language Support extension installed in VS.
 
  http://visualstudiogallery.msdn.microsoft.com/25b991db-befd-441b-b23b-bb5f8d07ee9f
  
-STEP 3
+ 
+# STEP 3
 Goal: NuGet package manager at version 2.5 or greater.
 
 * Run Visual Studio 2012.
@@ -44,14 +47,18 @@ Goal: NuGet package manager at version 2.5 or greater.
 * Select Updates -> Visual Studio Gallery in the left hand panel.
 * If the NuGet Paakage Manager appears, click the update button. (In my case it updated from version 2.2.40116.9051 to 2.6.40627.9000). Your goal is to get a NuGet version of 2.5 or more.
 * Restart Visual Studio.
-STEP 4
+
+
+# STEP 4
 
 Goal: A VS solution and project.
 
 * Run Visual Studio 20120
 
 * Create a new solution called ANTLR4 with a new Console Application project in it called Hello.
-STEP 5
+
+
+# STEP 5
 
 Goal: ANTLR4 NuGet package installed in Hello project.
 
@@ -63,7 +70,8 @@ Goal: ANTLR4 NuGet package installed in Hello project.
 * The “ANTLR 4” package will appear in the central list. Install it.
 This package must be installed in each project that uses the ANTLR C# target.
 
-STEP 6
+
+# STEP 6
 
 Goal: A simple ANTLR Grammar.
 
@@ -75,19 +83,22 @@ Goal: A simple ANTLR Grammar.
 * Click the Add Button.
 * Open the Hello.g4 file and replace all its text with the following:
  grammar Hello;
-
+```g
  HELLOWORD : 'hello' ;
 
  r  : HELLOWORD ID ;         // match keyword hello followed by an identifier
  ID : [a-z]+ ;              // match lower-case identifiers
 
  WS : [ \t\r\n]+ -> skip ;
-STEP 7
+```
+
+# STEP 7
 
 Goal: A program to parse the Hello.g4 grammar, parse a text string, and traverse the parsed tokens.
 
 * Create a new class called MyVisitor  as follows:
 
+```csharp
     public class MyVisitor : HelloBaseVisitor<object> {
 
  
@@ -105,7 +116,8 @@ Goal: A program to parse the Hello.g4 grammar, parse a text string, and traverse
             Console.WriteLine(" Visit Symbol={0}", node.Symbol.Text);
         }
     }
- 
+```
+
 * Open the Program.cs file.
 
 * Add the following using statement at the top of the file:
@@ -113,6 +125,7 @@ Goal: A program to parse the Hello.g4 grammar, parse a text string, and traverse
 
 * Replace all the class text with the following:
 
+```csharp
     class Program {
 
         private static void Main(string[] args) {
@@ -141,12 +154,13 @@ Goal: A program to parse the Hello.g4 grammar, parse a text string, and traverse
             visitor.VisitR(rContext);
         }
     }
- 
+```
+
 If you have ReSharper installed you will probably see syntax errors reported by intellisense in AddParseListener and RContext. These are, according to Sam, due to a bug in ReSharper. Ignore the “errors” for now or disable ReSharper via the Tools -> Options -> ReSharper -> General tab.
 
 * Build the program. It should build successfully.
 
-STEP 8
+# STEP 8
 
 Goal: Run the program with the expected result.
 
@@ -154,21 +168,25 @@ Goal: Run the program with the expected result.
 
 * You should see the following output in the console window:
  
+```
  START
 
  HelloVisitor VisitR
  Visit Symbol=hello
  Visit Symbol=world
  DONE. Hit RETURN to exit:
- 
+```
+
 The program parsed the text “hello world” and chopped it up into 2 terminal tokens, as you can see above.
 
-STEP 9
+
+# STEP 9
 
 Goal: Understand how it works (only a bit though).
 
 * Look in the ANTLR4\Hello\obj\Debug directory and observe the following files:
 
+```
  HelloBaseListener.cs
 
  HelloBaseVisitor.cs
@@ -178,13 +196,15 @@ Goal: Understand how it works (only a bit though).
  HelloParser.cs
  HelloVisitor.cs
  
-USEFUL LINKS
+``` 
+
+# USEFUL LINKS
 
 http://antlr.org/
 
 http://tunnelvisionlabs.com/products/demo/antlrworks
  
-ATTACHED FILES
+# ATTACHED FILES
  
 A word file with this text in it.
 A zip file of the Visual Studio Hello project. This should be placed in a solution directory and would be accompanied by a packages directory containing Antlr4.4.1.0-alpha003 and Antlr4.Runtime.4.1.0-alpha003 which are got from NuGet.
