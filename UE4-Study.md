@@ -49,10 +49,11 @@
       1. [언리얼 튜토리얼만 쌓여가는 유니티 개발자를 위한 조언](http://replay.unrealsummit.co.kr/data/summit2017/unrealsummit018.pdf)
       1. [모바일 개발 설정과 패키징](http://replay.unrealsummit.co.kr/data/summit2015/2015_02.pdf)
       1. [UMG 사용가이드](http://replay.unrealsummit.co.kr/data/summit2015/2015_10.pdf)
-   4. [언리얼공식 문서](https://docs.unrealengine.com/latest/KOR/)
+   4. [언리얼위키 튜토리얼](https://wiki.unrealengine.com/Category:Tutorials)
+   5. [언리얼공식 문서](https://docs.unrealengine.com/latest/KOR/)
       1. 공홈에 필요한 내용은 다 있지만, 문서가 정돈되어 있지 않고 원작자가 원작자를 위한 문서화를 한 것 같은 정도의 수준이다. 이해가 안 될 경우 독자의 잘못이 아닐 가능성이 높다. 코딩을 직접 해보고 시간이 좀 흘러야 "아 이게 이걸 말하는 거였구나" 같은 수준의 문서들이 있다는 것을 알고 봐야한다.
-   5. [언리얼블로그-프로그래밍](https://www.unrealengine.com/ko/blog/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
-   6. [언리얼엔진버전 히스토리](https://ko.wikipedia.org/wiki/%EC%96%B8%EB%A6%AC%EC%96%BC_%EC%97%94%EC%A7%84)를 보면 엔진코드가 왜 정돈되지 않았는지 이해 할 수 있다. 차후 엔진코드를 분석하기 전에도 코드보다는 스펙/기술문서부터 찾아보는게 좋을 것 같다.
+   6. [언리얼블로그-프로그래밍](https://www.unrealengine.com/ko/blog/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
+   7. [언리얼엔진버전 히스토리](https://ko.wikipedia.org/wiki/%EC%96%B8%EB%A6%AC%EC%96%BC_%EC%97%94%EC%A7%84)를 보면 엔진코드가 왜 정돈되지 않았는지 이해 할 수 있다. 차후 엔진코드를 분석하기 전에도 코드보다는 스펙/기술문서부터 찾아보는게 좋을 것 같다.
 
 
 # 최소 용어
