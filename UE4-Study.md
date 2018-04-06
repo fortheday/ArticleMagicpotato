@@ -366,3 +366,6 @@ Fog처럼 씬글로벌 개념인 애들은 컴포넌트 추가가 아예 안된�
 
 # 언리얼 자체 라이브러리 (TArray 등) 관련 메모
 1. TODO
+
+# [자동화 테스트 시스템 개요](http://api.unrealengine.com/KOR/Programming/Automation/index.html)
+1. TODO
