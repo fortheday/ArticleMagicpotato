@@ -86,9 +86,11 @@
 
 ## UV언렙 메모
 > CheckPattern으로 뷰포트의 면 체커가 정사각형으로 나와야 한다. 잘 안되면 UV Editor에서 Freeform 누르고 수동 보정
+1. EditablePoly로 바꾼 후, Unwrap UVW 모디파이어 적용,
+1. Open UV Editor
 1. 언랩
    1. 면 선택
-   1. Pelt 클릭
+   1. Pelt 클릭 (엣지 스플릿이 되어있어야 한다)
       1. Start Pelt
    1. 릴렉스 세팅 - Face
    1. Start Relax
