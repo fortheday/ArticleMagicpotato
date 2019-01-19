@@ -10,6 +10,8 @@
 
 1. [Unreal Engine 4 Documentation](https://docs.unrealengine.com/latest/KOR/) 만으로는 학습하기 어렵다. [커뮤니티-블로그(프로그래밍)](https://www.unrealengine.com/ko/blog/category/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)에서 읽어야만 하는 내용이 따로 있다. 아마도 엔진이 업데이트 될 때마다 UE4Doc이 갱신된다기 보다는 블로그나 릴리즈노트에 신기능을 어떻게 사용하는지 안내하는 형식으로 문서화가 이루어지는 것 같다.
 
+1. UE4문서가 UDK(UE3)문서보다 부실한 경우가 있다. 때때로 언리얼엔진 3용 문서를 읽을 필요가 있다. 예를들어 이런 문서는 UE4에서 찾아볼 수 없다. [터레인 고급 텍스처](https://api.unrealengine.com/udk/Three/TerrainAdvancedTexturesKR.html)
+
 1. 문서가 이해되지 않으면 문서가 불친절하게 작성되었을 가능성이 높다. 반드시 직접 테스트하거나 코딩해 봐야 한다.
 
 1. 훑어보고 → 해보고(까먹고) → 한번 더 보는 정도로 학습하는게 효율적이다.
